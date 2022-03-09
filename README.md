@@ -1,2 +1,4 @@
-# devsport-tournaments
+# DevSports Company 
+# devsport-tournaments Project
+
 Web Application - Tournaments
