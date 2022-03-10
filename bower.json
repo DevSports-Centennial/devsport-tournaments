@@ -1,0 +1,34 @@
+{
+  "name": "COMP229-W2022-GroupAssignment-DevSportsTeam",
+  "description": "## Welcome to the Group Project - DevSports Team - Tournaments Website",
+  "main": "server.js",
+  "authors": [
+    "DevSports Team",
+    "Ronald Saenz",
+    "Josewin Kannampilly",
+    "Monika Kumari",
+    "Neha Anil",
+    "Suvarn Sanjay Badkas",
+    "Anitta Davis"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "EJS"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/Scripts/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
