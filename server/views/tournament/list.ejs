@@ -6,7 +6,7 @@
         <div class="col-md-offset-1 col-md-10">
           <h3>Tournaments </h3>
           <!-- Add button -->
-          <a href="/tournament/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Match</a>
+          <a href="/tournament/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Tournament</a>
           <br>
           <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover">
@@ -29,7 +29,7 @@
                   <td class="text-center"><%= tournament[count].Sports %></td>
                   <td class="text-center"><%= tournament[count].Details %></td>
                   <td class="text-center"><%= tournament[count].Matches %></td>
-                  <td class="text-center"><%= tournament[count].Prizepool %></td>
+                  <td class="text-center">$<%= tournament[count].Prizepool %> CAD</td>
                   
                   <!-- Edit button -->
                   <td class="text-center">
