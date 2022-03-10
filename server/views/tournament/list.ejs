@@ -1,0 +1,55 @@
+<% include ../partials/header.ejs %>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <h3>Tournaments </h3>
+          <!-- Add button -->
+          <a href="/tournament/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Match</a>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th class="text-center">Sports</th>
+                  <th class="text-center">Details</th>
+                  <th class="text-center">Matches</th>
+                  <th class="text-center">Prizepool</th>
+                  <th class="text-center"></th>
+                  <th class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Template Row -->
+                <% for (let count = 0; count < tournament.length; count++) { %>
+                <tr>
+                  <td><%= tournament[count].Name %></td>
+                  <td class="text-center"><%= tournament[count].Sports %></td>
+                  <td class="text-center"><%= tournament[count].Details %></td>
+                  <td class="text-center"><%= tournament[count].Matches %></td>
+                  <td class="text-center"><%= tournament[count].Prizepool %></td>
+                  
+                  <!-- Edit button -->
+                  <td class="text-center">
+                    <a href="tournament/<%= tournament[count]._id %>"+count class="btn btn-primary"><i class="fa fa-plus"></i> Edit</a>
+                  </td>
+                  
+                  <!-- Delete button -->
+                  <td class="text-center">
+                    <a href="tournament/delete/<%= tournament[count]._id %>" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Delete</a>
+                  </td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+           <div class="col-md-offset-1 col-md-10 text-center">
+            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<% include ../partials/footer.ejs %>
