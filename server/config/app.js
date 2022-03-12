@@ -22,6 +22,10 @@ let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
 mongoDB.once('open', ()=> {
   console.log("Connected to MongoDB...");
+  
+  // Populate Database
+  console.log("Start the populating task...");
+  require("../populate_db/populate_tournament");
 });
 
 // define routers
