@@ -14,6 +14,7 @@ This web application named “DevSports” will host the tournament details of d
 - [@JOSEWINJOYKANNAMPILLY](https://github.com/JOSEWINJOYKANNAMPILLY)
 - [@suvarnbadkas](https://github.com/suvarnbadkas)
 - [@anittadavis](https://github.com/anittadavis)
+- [@NehaPuthuran](https://github.com/NehaPuthuran)
 
 
 ## Screenshots
