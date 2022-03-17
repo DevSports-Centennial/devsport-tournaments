@@ -1,3 +1,12 @@
+/**
+ * index.js
+ * Due Date: March 18, 2022
+ *
+ * @link   index.js
+ * @file   This file defines the routes to navigate the Home page.
+ * @author DevSports
+ * @since  1.0.0
+ */
 
 // modules required for routing
 let express = require('express');

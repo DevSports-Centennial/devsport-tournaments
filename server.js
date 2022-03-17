@@ -1,3 +1,13 @@
+/**
+ * server.js
+ * Due Date: March 18, 2022
+ *
+ * @link   server.js
+ * @file   This file defines the deployment of the project.
+ * @author DevSports
+ * @since  1.0.0
+ */
+
 let app = require('./server/config/app');
 let debug = require('debug')('comp229-w2022-groupassignment:server');
 let http = require('http');

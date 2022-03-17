@@ -1,3 +1,13 @@
+/**
+ * populate_tournament.js
+ * Due Date: March 18, 2022
+ *
+ * @link   populate_tournament.js
+ * @file   This script file is necessary to populate the database on the tournament table.
+ * @author DevSports
+ * @since  1.0.0
+ */
+
 
 var tournamentData = require( './tournaments.json' )
 
