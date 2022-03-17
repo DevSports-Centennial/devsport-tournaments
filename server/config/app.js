@@ -1,3 +1,12 @@
+/**
+ * app.js
+ * Due Date: March 18, 2022
+ *
+ * @link   app.js
+ * @author DevSports
+ * @since  1.0.0
+ */
+
 
 // modules for node and express
 let createError = require('http-errors');

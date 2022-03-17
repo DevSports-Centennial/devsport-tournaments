@@ -1,3 +1,14 @@
+/**
+ * tournament.js
+ *
+ * Due Date: Mar 18, 2022
+ *
+ * @link   tournament.js
+ * @file   This is a routing file to include CRUD methods.
+ * @author  DevSports 
+ * @since  1.0.0
+ */
+
 // modules required for routing 
 let express = require('express');
 let router = express.Router();

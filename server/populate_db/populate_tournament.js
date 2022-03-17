@@ -1,3 +1,12 @@
+/**
+ * populate_tournament.js
+ * Due Date: March 18, 2022
+ *
+ * @link   populate_tournament.js
+ * @author DevSports
+ * @since  1.0.0
+ */
+
 
 var tournamentData = require( './tournaments.json' )
 
