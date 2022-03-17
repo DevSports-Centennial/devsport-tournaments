@@ -3,12 +3,12 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-// define the book model
+// define the tournament model
 let tournament = require('../models/tournament');
 
-/* GET books List page. READ */
+/* GET tournament List page. READ */
 router.get('/', (req, res, next) => {
-  // find all books in the books collection
+  // find all tournaments in the tournaments collection
   tournament.find( (err, tournament) => {
     if (err) {
       return console.error(err);
@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
 
 });
 
-//  GET the Book Details page in order to add a new Book
+//  GET the tournament Details page in order to add a new tournament
 router.get('/add', (req, res, next) => {
   // Redirects user to Details Page
   res.render('tournament/details', {
@@ -33,7 +33,7 @@ router.get('/add', (req, res, next) => {
   });
 });
 
-// POST process the Book Details page and create a new Book - CREATE
+// POST process the tournament Details page and create a new tournament - CREATE
 router.post('/add', (req, res, next) => {
  // Gets data from the form
   let data = req.body;
@@ -45,7 +45,7 @@ router.post('/add', (req, res, next) => {
     Matches: parseInt(data.matches),
     Prizepool: parseInt(data.prizepool),
   }
-  // Creates the book on MongoDB
+  // Creates the tournament on MongoDB
   tournament.create(newTournament, function(err, result) {
     if (err) {
       res.send(err);
@@ -55,7 +55,7 @@ router.post('/add', (req, res, next) => {
   });
 });
 
-// GET the Book Details page in order to edit an existing Book
+// GET the tournament Details page in order to edit an existing Book
 router.get('/:id', (req, res, next) => {
   tournament.findById( req.params.id , (err, tournament) => {
     if (err) {
