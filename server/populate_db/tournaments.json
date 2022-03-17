@@ -1,0 +1,16 @@
+{
+    "tournaments": 
+    [
+        {"Name":"Jordan","Sports":"Basketball","Details":"The Basketball Tournament (TBT) is an open-application, single-elimination tournament played each summer in the Canada.","Matches":24,"Prizepool":1000000},
+        {"Name":"Lebron Fall","Sports":"Basketball","Details":"The Basketball Tournament (TBT) is an open-application, single-elimination tournament played each fall in the Canada.","Matches":24,"Prizepool":1000000},
+        {"Name":"Black Mamba","Sports":"Basketball","Details":"The Basketball Tournament (TBT) is an open-application, single-elimination tournament played each winter in the Canada.","Matches":24,"Prizepool":2000000},
+        {"Name":"Sachin","Sports":"Cricket","Details":"Cricket is a game played between two teams, generally of 11 members each.","Matches":64,"Prizepool":2500000},
+        {"Name":"Nadal","Sports":"Tennis","Details":"Tennis is a game played with two opposing players (singles) or pairs of players (doubles) using tautly strung rackets to hit a ball.","Matches":32,"Prizepool":500000},
+        {"Name":"Tiger","Sports":"Golf","Details":"players compete either against one another or in teams across a plethora of scoring models and tee time configurations.","Matches":24,"Prizepool":6320000},
+        {"Name":"Federer","Sports":"Tennis","Details":"Tennis is a game played with two opposing players (singles) or pairs of players (doubles) using tautly strung rackets to hit a ball.","Matches":32,"Prizepool":500000},
+        {"Name":"Ronaldo","Sports":"Soccer","Details":"A knockout tournament or elimination tournament is divided into successive rounds; each competitor plays in at least one fixture per round.","Matches":48,"Prizepool":8630000},
+        {"Name":"Jogo Bonito","Sports":"Soccer","Details":"A knockout tournament or elimination tournament is divided into successive rounds; each competitor plays in at least one fixture per round.","Matches":48,"Prizepool":9630000},
+        {"Name":"Zizu","Sports":"Soccer","Details":"A knockout tournament or elimination tournament is divided into successive rounds; each competitor plays in at least one fixture per round.","Matches":48,"Prizepool":1990000},
+        {"Name":"Maradona Championship","Sports":"Soccer","Details":"A knockout tournament or elimination tournament is divided into successive rounds; each competitor plays in at least one fixture per round.","Matches":48,"Prizepool":9000000}
+    ]
+}
