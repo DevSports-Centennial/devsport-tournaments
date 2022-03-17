@@ -27,7 +27,7 @@ router.get('/', (req, res, next) => {
 router.get('/add', (req, res, next) => {
   // Redirects user to Details Page
   res.render('tournament/details', {
-    title: 'Add a tournament',
+    title: 'Add Tournament',
     tournament: '',
     action: '/tournament/add'
   });
@@ -64,7 +64,7 @@ router.get('/:id', (req, res, next) => {
     else {
       // Redirects user to Details Page
       res.render('tournament/details', {
-        title: 'Edit a match',
+        title: 'Edit Tournament',
         tournament: tournament,
         action: ''
       });
