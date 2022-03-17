@@ -3,10 +3,10 @@
  * Due Date: March 18, 2022
  *
  * @link   app.js
+ * @file   This file defines the deployment of the project.
  * @author DevSports
  * @since  1.0.0
  */
-
 
 // modules for node and express
 let createError = require('http-errors');
