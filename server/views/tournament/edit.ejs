@@ -1,0 +1,95 @@
+<% include ../partials/header.ejs  %>
+
+
+
+
+
+
+<!-- Content for the Add page -->
+<main class="container p-5 mt-2 mb-5  transparent">
+    <div class="jumbotron">
+        
+    
+        <!-- Page title -->
+        <h1 class="xlarge-font" style="text-align: center;"><b>Update Tournament</b></h1>
+        <hr class="my-3"><br>
+    
+        <div class="row">
+            <div class="offset-md-2 col-md-8">
+    
+                <!-- page form -->
+                <form class="form" method="POST">
+                    <div class="form-group">
+                        <label for="NameTextField">Name</label>
+                        <input type="text" class="form-control"
+                        id="nameTextField"
+                        placeholder="Creator's Name"
+                        name="name" 
+                        value="<%= tournament.Name %>"
+                        required>
+                    </div>
+
+                    <form class="form" method="POST">
+                        <div class="form-group">
+                            <label for="sportsTextField">Sports</label>
+                            <input type="text" class="form-control"
+                            id="nameTextField"
+                            placeholder="Sports"
+                            name="Sports" 
+                            value="<%= tournament.Sports %>"
+                            required>
+                        </div>  
+
+                        <form class="form" method="POST">
+                            <div class="form-group">
+                                <label for="DetailsTextField">Details</label>
+                                <input type="text" class="form-control"
+                                id="nameTextField"
+                                placeholder="Match details"
+                                name="details" 
+                                value="<%= tournament.Details %>"
+                                required>
+                            </div>  
+    
+
+                    <div class="form-group">
+                        <label for="MatchesTextField">Matches</label>
+                        <input type="text" class="form-control"
+                        id="MatchesTextField" 
+                        name="matches" 
+                        placeholder="Tournament Matches"
+                        value="<%= tournament.Matches %>"
+                        required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="PrizepoolTextField">Prizepool</label>
+                        <input type="text" class="form-control"
+                        id="PrizepoolTextField"
+                        placeholder="Tournament Prizepool"
+                        name="prizepool" 
+                        value="<%= tournament.Prizepool %>"
+                        required>
+                    </div><br>
+    
+                    <button class="btn btn-success" type="submit" style="margin-right: 10px;">
+                        <i class="fas fa-edit"></i> Update</button>
+                    
+                        <a href="/tournament" class="btn btn-warning" style="margin-right: 10px;">
+                            <i class="fas fa-undo"></i> Cancel</a>
+    
+    
+                            <a href="/tournament/delete/<%= tournament.id %>" class="btn btn-danger">
+                                    Delete
+                                </a>
+    
+                </form>
+            </div>
+    
+        </div>
+    </div>
+    
+    
+</main>
+
+<% include ../partials/footer.ejs  %>
