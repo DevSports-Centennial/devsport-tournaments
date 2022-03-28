@@ -28,6 +28,12 @@ This web application named “DevSports” will host the tournament details of d
 
 ![App Screenshot](https://user-images.githubusercontent.com/97996783/157978598-36d12b95-4f53-4f51-bea2-dbaf7dd0415e.png)
 
+![App Screenshot](https://user-images.githubusercontent.com/97996783/160504274-471e8875-2b93-4c2f-b717-3f3864e2d084.png)
+
+![App Screenshot](https://user-images.githubusercontent.com/97996783/160504433-a8dc81ce-2446-450a-8fd5-9d7b33983762.png)
+
+
+
 ## Color Reference
 
 | Color             | Hex                                                                |
