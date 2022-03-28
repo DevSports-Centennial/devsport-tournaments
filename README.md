@@ -1,7 +1,7 @@
 
 # DevSports-Tournaments Project
 
-This web application named “DevSports” will host the tournament details of different type of sports like Basketball,Cricket,Tennis,Golf and so more.The web application is built on MEAN stack and the users will be provided with full CRUD options to make changes to the tournament details,prizepools etc.
+This web application named “DevSports” will host the tournament details of different type of sports like Basketball,Cricket,Tennis,Golf and so more.The web application is built on MEAN stack and the users will be provided with full CRUD options to make changes to the tournament details,prizepools etc. 
 
 
 
