@@ -8,6 +8,7 @@
  * @since  1.0.0
  */
 
-module.exports = {
-  "URI": "mongodb+srv://scooby:scoobydooby@cluster0.2mpdu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+ module.exports = {
+  "URI": "mongodb+srv://scooby:scoobydooby@cluster0.2mpdu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "Secret": 'logSecret'
 };
