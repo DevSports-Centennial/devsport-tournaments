@@ -1,0 +1,56 @@
+<%- include ../partials/header.ejs %>
+ 
+ 
+ 
+<main class="container transparent">
+    <div class="jumbotron">
+        <div class="container-flex" style="padding-top:45px;">
+ 
+            <!-- Page title -->
+            <h1 class="xlarge-font" style="text-align: center;"><b>Login</b></h1>
+            <hr class="my-3"><br>
+ 
+            <!-- Message Area -->
+            <% if(messages.length > 0) {%>
+                <div class="alert alert-danger">
+                    <%= messages %>
+                </div>
+            <% } %>
+ 
+            <div class="row">
+                <div class="offset-md-4 col-md-4">
+                    <form method="POST" autocomplete="off">
+                        <fieldset class="form-group">
+                            <label for="username">Username: </label>
+                            <input type="text" class="form-control"
+                            name="username" placeholder="Enter username"
+                            id="username" required autofocus>
+                        </fieldset>
+ 
+                        <fieldset class="form-group mt-2">
+                            <label for="password">Password: </label>
+                            <input type="password" class="form-control"
+                            name="password" placeholder="Enter password"
+                            id="password" required>
+       
+                        </fieldset>
+ 
+                        <fieldset class="form-group text-right mt-2">
+                            <input type="submit" class="btn btn-link" value="Login">
+                            <a href="/">
+                                <input type="button" class="btn btn-link" value="Cancel">
+                            </a>
+                        </fieldset>
+                        <br>
+                        If you don't have account please <a class="btn btn-info" href="/register">Register Here</a>
+ 
+                    </form>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+    <br><br><br><br><br><br><br>
+</main>
+ 
+<%- include ../partials/footer.ejs %>
