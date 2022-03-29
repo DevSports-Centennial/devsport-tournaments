@@ -11,25 +11,33 @@ let DB = require('../config/db');
 let userModel = require('../models/user');
 let User = userModel.User; // alias
 
+function isEmail(value) {
+    var er = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    return er.test(value);
+}
+
+function isUsername(value) {
+    var er = /^[A-Za-z0-9_-]{4,16}$/;
+    return er.test(value);
+}
+
 /* GET home page. wildcard */
 module.exports.displayHomePage = (req, res, next) => {
     res.render('content/index', {
       title: 'Home',
       displayName: req.user ? req.user.displayName : ''
      });
-  }
+}
   
-
-  
-  module.exports.displayLoginPage = (req, res, next) => {
+module.exports.displayLoginPage = (req, res, next) => {
     // check if the user is already logged in
-     if(!req.user)
+        if(!req.user)
     {
         res.render('auth/login', 
         {
-           title: "Login",
-           messages: req.flash('loginMessage'),
-           displayName: req.user ? req.user.displayName : '' 
+            title: "Login",
+            messages: req.flash('loginMessage'),
+            displayName: req.user ? req.user.displayName : '' 
         })
     }
     else
@@ -97,41 +105,58 @@ module.exports.processRegisterPage = (req, res, next) => {
     // instantiate a user object
     let newUser = new User({
         username: req.body.username,
-        //password: req.body.password
         email: req.body.email,
         displayName: req.body.displayName
     });
 
-    User.register(newUser, req.body.password, (err) => {
-        if(err)
+    if(isUsername(req.body.username) == false || isEmail(req.body.email) == false)
+    {
+        req.flash(
+            'registerMessage',
+            'Registration Error: Register validation failed!'
+        );
+        console.log('Error: Register validation failed!')
+
+        return res.render('auth/register',
         {
-            console.log("Error: Inserting New User");
-            if(err.name == "UserExistsError")
+            title: 'Register',
+            messages: req.flash('registerMessage'),
+            displayName: req.user ? req.user.displayName : ''
+        });
+    }
+    else{
+
+        User.register(newUser, req.body.password, (err) => {
+            if(err)
             {
-                req.flash(
-                    'registerMessage',
-                    'Registration Error: User Already Exists!'
-                );
-                console.log('Error: User Already Exists!')
+                console.log("Error: Inserting New User");
+                if(err.name == "UserExistsError")
+                {
+                    req.flash(
+                        'registerMessage',
+                        'Registration Error: User Already Exists!'
+                    );
+                    console.log('Error: User Already Exists!')
+                }
+                return res.render('auth/register',
+                {
+                    title: 'Register',
+                    messages: req.flash('registerMessage'),
+                    displayName: req.user ? req.user.displayName : ''
+                });
             }
-            return res.render('auth/register',
+            else
             {
-                title: 'Register',
-                messages: req.flash('registerMessage'),
-                displayName: req.user ? req.user.displayName : ''
-            });
-        }
-        else
-        {
-            // if no error exists, then registration is successful
+                // if no error exists, then registration is successful
 
-            // redirect the user and authenticate them
+                // redirect the user and authenticate them
 
-            return passport.authenticate('local')(req, res, () => {
-                res.redirect('/tournament')
-            });
-        }
-    });
+                return passport.authenticate('local')(req, res, () => {
+                    res.redirect('/tournament')
+                });
+            }
+        });
+    }
 }
 
 module.exports.performLogout = (req, res, next) => {

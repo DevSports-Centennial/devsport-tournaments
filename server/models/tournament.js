@@ -10,19 +10,49 @@
 
 
 
- let mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
- // create a model class
- let Tournament = mongoose.Schema({
-     Name: String,
-     Sports: String,
-     Details: String,
-     Matches: Number,
-     Prizepool: Number,
- },
- {
-   collection: "tournament"
- });
+// create a model class
+let Tournament = mongoose.Schema
+(
+  {
+    Name: 
+    {
+      type: String,
+      default: '',
+      trim: true,
+      required: 'Name is required'
+    },
+    Sports: 
+    {
+      type: String,
+      default: '',
+      trim: true,
+      required: 'Sports is required'
+    },
+    Details: 
+    {
+      type: String,
+      default: '',
+      trim: true
+    },
+    Matches: 
+    {
+      type: Number,
+      default: '',
+      required: 'Matches is required'
+    },
+    Prizepool: 
+    {
+      type: Number,
+      default: '',
+      required: 'Prizepool is required'
+    },
+  },
+  {
+    collection: "tournament"
+  }
+);
  
  module.exports = mongoose.model('Tournament', Tournament);
  
