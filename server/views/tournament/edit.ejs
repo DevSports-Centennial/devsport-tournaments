@@ -1,107 +1,115 @@
-<% include ../partials/header.ejs  %>
 
-<div class="row justify-content-center">
-    <div class="col-xl-11">
-        <!-- Begin Page Header-->
-        <div class="page-header pr-0 pl-0">
-            <div class="d-flex align-items-center">
-                <h2 class="page-header-title">Update Tournament</h2>
-            </div>
-        </div>
-        <!-- End Page Header -->
-        <div class="row flex-row">
-            <div class="col-xl-12">
-                <!-- Form -->
-                <div class="widget has-shadow">
-                    <!-- Page title -->
-                    <div class="widget-header bordered no-actions d-flex align-items-center">
-                        <h4>Tournament Form</h4>
-                    </div>
-                    <div class="widget-body">
 
-                        <!-- Message Area -->
-                        <% if(messages.length> 0) {%>
-                        <div class="alert alert-danger">
-                            <%= messages %>
-                        </div>
-                        <% } %>
+<% if(typeof displayName == 'string' && displayName) { %> 
+        
+    <% include ../partials/header.ejs  %>
 
-                        
-                        <!-- page form -->
-                        <form class="form" method="POST">
-                            <div class="form-group">
-                                <label for="nameTextField">Name</label>
-                                <input type="text" class="form-control"
-                                id="nameTextField"
-                                placeholder="Creator's Name"
-                                name="name" 
-                                value="<%= tournament.Name %>"
-                                required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="sportsTextField">Sports</label>
-                                <input type="text" class="form-control"
-                                id="sportsTextField"
-                                placeholder="Sports"
-                                name="sports" 
-                                value="<%= tournament.Sports %>"
-                                required>
-                            </div>  
-
-                            <div class="form-group">
-                                <label for="detailsTextField">Details</label>
-                                <input type="text" class="form-control"
-                                id="detailsTextField"
-                                placeholder="Match details"
-                                name="details" 
-                                value="<%= tournament.Details %>"
-                                required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="MatchesTextField">Matches</label>
-                                <input type="text" class="form-control"
-                                id="MatchesTextField" 
-                                name="matches" 
-                                placeholder="Tournament Matches"
-                                value="<%= tournament.Matches %>"
-                                required>
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="PrizepoolTextField">Prizepool</label>
-                                <input type="text" class="form-control"
-                                id="PrizepoolTextField"
-                                placeholder="Tournament Prizepool"
-                                name="prizepool" 
-                                value="<%= tournament.Prizepool %>"
-                                required>
-                            </div><br>
-            
-                            <button class="btn btn-success" type="submit" style="margin-right: 10px;">
-                                <i class="fas fa-edit"></i> Update
-                            </button>
-                            
-                            <a href="/tournament" class="btn btn-warning" style="margin-right: 10px;">
-                                <i class="fas fa-undo"></i> Cancel
-                            </a>
-            
-                            <a href="/tournament/delete/<%= tournament.id %>" class="btn btn-danger">
-                                Delete
-                            </a>
-            
-                        </form>
-                    </div>
+    <div class="row justify-content-center">
+        <div class="col-xl-11">
+            <!-- Begin Page Header-->
+            <div class="page-header pr-0 pl-0">
+                <div class="d-flex align-items-center">
+                    <h2 class="page-header-title">Update Tournament</h2>
                 </div>
-
             </div>
-            <!-- End Col -->
-        </div>
-        <!-- End Row -->
-    </div>
-    <!-- End Col -->
-</div>
-<!-- End Row -->
+            <!-- End Page Header -->
+            <div class="row flex-row">
+                <div class="col-xl-12">
+                    <!-- Form -->
+                    <div class="widget has-shadow">
+                        <!-- Page title -->
+                        <div class="widget-header bordered no-actions d-flex align-items-center">
+                            <h4>Tournament Form</h4>
+                        </div>
+                        <div class="widget-body">
 
-<% include ../partials/footer.ejs  %>
+                            <!-- Message Area -->
+                            <% if(messages.length> 0) {%>
+                            <div class="alert alert-danger">
+                                <%= messages %>
+                            </div>
+                            <% } %>
+
+                            
+                            <!-- page form -->
+                            <form class="form" method="POST">
+                                <div class="form-group">
+                                    <label for="nameTextField">Name</label>
+                                    <input type="text" class="form-control"
+                                    id="nameTextField"
+                                    placeholder="Creator's Name"
+                                    name="name" 
+                                    value="<%= tournament.Name %>"
+                                    required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sportsTextField">Sports</label>
+                                    <input type="text" class="form-control"
+                                    id="sportsTextField"
+                                    placeholder="Sports"
+                                    name="sports" 
+                                    value="<%= tournament.Sports %>"
+                                    required>
+                                </div>  
+
+                                <div class="form-group">
+                                    <label for="detailsTextField">Details</label>
+                                    <input type="text" class="form-control"
+                                    id="detailsTextField"
+                                    placeholder="Match details"
+                                    name="details" 
+                                    value="<%= tournament.Details %>"
+                                    required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="MatchesTextField">Matches</label>
+                                    <input type="text" class="form-control"
+                                    id="MatchesTextField" 
+                                    name="matches" 
+                                    placeholder="Tournament Matches"
+                                    value="<%= tournament.Matches %>"
+                                    required>
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="PrizepoolTextField">Prizepool</label>
+                                    <input type="text" class="form-control"
+                                    id="PrizepoolTextField"
+                                    placeholder="Tournament Prizepool"
+                                    name="prizepool" 
+                                    value="<%= tournament.Prizepool %>"
+                                    required>
+                                </div><br>
+                
+                                <button class="btn btn-success" type="submit" style="margin-right: 10px;">
+                                    <i class="fas fa-edit"></i> Update
+                                </button>
+                                
+                                <a href="/tournament" class="btn btn-warning" style="margin-right: 10px;">
+                                    <i class="fas fa-undo"></i> Cancel
+                                </a>
+                
+                                <a href="/tournament/delete/<%= tournament.id %>" class="btn btn-danger">
+                                    Delete
+                                </a>
+                
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Col -->
+    </div>
+    <!-- End Row -->
+
+    <% include ../partials/footer.ejs  %>
+    
+<% } else { %>
+    <script> document.location.href = '/login' </script>
+<% } %>

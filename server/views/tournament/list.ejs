@@ -9,104 +9,103 @@
  */%>
 
 <% if(typeof displayName == 'string' && displayName) { %> 
-<% include ../partials/header.ejs %>
+  <% include ../partials/header.ejs %>
 
-
-<div class="row justify-content-center">
-  <div class="col-xl-11">
-      <!-- Begin Page Header-->
-      <div class="page-header pr-0 pl-0">
-          <div class="d-flex align-items-center">
-              <h2 class="page-header-title">Tournaments</h2>
-          </div>
-      </div>
-      <!-- End Page Header -->
-      <div class="row flex-row">
-          <div class="col-xl-12">
-              <!-- Form -->
-              <div class="widget has-shadow">
-                  <!-- Page title -->
-                  <div class="widget-header bordered no-actions d-flex align-items-center">
-                      <h4>Tournament List</h4>
-                  </div>
-                  <div class="widget-body">
-                    <% if(typeof displayName == 'string' && displayName) { %>
-                    <!-- Add button -->
-                    <a href="/tournament/add" class="btn btn-primary" role="button">
-                      <i class="fa fa-plus"></i> Add Tournament
-                    </a><br>
-                    <% } %>
-                    <br>
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-striped table-hover">
-                        
-                          <tr>
-                          <% if(typeof displayName == 'string' && displayName) { %>
-                            <th class="text-center" scope="col">Name</th>
-                            <th class="text-center" scope="col">Sports</th>
-                            <th class="text-center" scope="col">Details</th>
-                            <th class="text-center" scope="col">Matches</th>
-                            <th class="text-center" scope="col">Prizepool</th>
-                            <th class="text-center" scope="col"></th>
-                            <th class="text-center" scope="col"></th>
-                          <% } else { %>
-                            <th class="text-center" scope="col">Name</th>
-                            <th class="text-center" scope="col">Sports</th>
-                            <th class="text-center" scope="col">Details</th>
-                            <th class="text-center" scope="col">Matches</th>
-                            <th class="text-center" scope="col">Prizepool</th>
-                          <% } %>
-                          </tr>
-                        
-                        
-                          <!-- Template Row -->
-                        <% for (let count = 0; count < tournamentList.length; count++) { %>
-                          <tr>
-                          <% if(typeof displayName == 'string' && displayName) { %>
-                            <td class="text-center"><%= tournamentList[count].Name %></td>
-                            <td class="text-center"><%= tournamentList[count].Sports %></td>
-                            <td class="text-center"><%= tournamentList[count].Details %></td>
-                            <td class="text-center"><%= tournamentList[count].Matches %></td>
-                            <td class="text-center">$<%= tournamentList[count].Prizepool %> CAD</td>
-                            
-                            <!-- Edit button -->
-                            <td class="text-center">
-                              <a href="/tournament/edit/<%= tournamentList[count]._id %>"class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
-                            </td>
-                            
-                            <!-- Delete button -->
-                            <td class="text-center">
-                              <a href="/tournament/delete/<%= tournamentList[count]._id %>" class="btn btn-danger"><i class="fa fa-check-square-o"></i> Delete</a>
-                            </td>
-                          <% } else { %>
-                            <td class="text-center"><%= tournamentList[count].Name %></td>
-                            <td class="text-center"><%= tournamentList[count].Sports %></td>
-                            <td class="text-center"><%= tournamentList[count].Details %></td>
-                            <td class="text-center"><%= tournamentList[count].Matches %></td>
-                            <td class="text-center">$<%= tournamentList[count].Prizepool %> CAD</td>
-                          <% } %>
-                          </tr>
-                        <% } %> 
-                      </table>
-                    </div>
-
-
-                    <div class="col-md-offset-1 col-md-10 text-center">
-                      <ul class="pagination pagination-lg pager" id="myPager"></ul>
-                    </div>
-                  </div>
-                </div>
-
+  <div class="row justify-content-center">
+    <div class="col-xl-11">
+        <!-- Begin Page Header-->
+        <div class="page-header pr-0 pl-0">
+            <div class="d-flex align-items-center">
+                <h2 class="page-header-title">Tournaments</h2>
             </div>
-            <!-- End Col -->
         </div>
-        <!-- End Row -->
-    </div>
-    <!-- End Col -->
-</div>
-<!-- End Row -->
+        <!-- End Page Header -->
+        <div class="row flex-row">
+            <div class="col-xl-12">
+                <!-- Form -->
+                <div class="widget has-shadow">
+                    <!-- Page title -->
+                    <div class="widget-header bordered no-actions d-flex align-items-center">
+                        <h4>Tournament List</h4>
+                    </div>
+                    <div class="widget-body">
+                      <% if(typeof displayName == 'string' && displayName) { %>
+                      <!-- Add button -->
+                      <a href="/tournament/add" class="btn btn-primary" role="button">
+                        <i class="fa fa-plus"></i> Add Tournament
+                      </a><br>
+                      <% } %>
+                      <br>
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                          
+                            <tr>
+                            <% if(typeof displayName == 'string' && displayName) { %>
+                              <th class="text-center" scope="col">Name</th>
+                              <th class="text-center" scope="col">Sports</th>
+                              <th class="text-center" scope="col">Details</th>
+                              <th class="text-center" scope="col">Matches</th>
+                              <th class="text-center" scope="col">Prizepool</th>
+                              <th class="text-center" scope="col"></th>
+                              <th class="text-center" scope="col"></th>
+                            <% } else { %>
+                              <th class="text-center" scope="col">Name</th>
+                              <th class="text-center" scope="col">Sports</th>
+                              <th class="text-center" scope="col">Details</th>
+                              <th class="text-center" scope="col">Matches</th>
+                              <th class="text-center" scope="col">Prizepool</th>
+                            <% } %>
+                            </tr>
+                          
+                          
+                            <!-- Template Row -->
+                          <% for (let count = 0; count < tournamentList.length; count++) { %>
+                            <tr>
+                            <% if(typeof displayName == 'string' && displayName) { %>
+                              <td class="text-center"><%= tournamentList[count].Name %></td>
+                              <td class="text-center"><%= tournamentList[count].Sports %></td>
+                              <td class="text-center"><%= tournamentList[count].Details %></td>
+                              <td class="text-center"><%= tournamentList[count].Matches %></td>
+                              <td class="text-center">$<%= tournamentList[count].Prizepool %> CAD</td>
+                              
+                              <!-- Edit button -->
+                              <td class="text-center">
+                                <a href="/tournament/edit/<%= tournamentList[count]._id %>"class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                              </td>
+                              
+                              <!-- Delete button -->
+                              <td class="text-center">
+                                <a href="/tournament/delete/<%= tournamentList[count]._id %>" class="btn btn-danger"><i class="fa fa-check-square-o"></i> Delete</a>
+                              </td>
+                            <% } else { %>
+                              <td class="text-center"><%= tournamentList[count].Name %></td>
+                              <td class="text-center"><%= tournamentList[count].Sports %></td>
+                              <td class="text-center"><%= tournamentList[count].Details %></td>
+                              <td class="text-center"><%= tournamentList[count].Matches %></td>
+                              <td class="text-center">$<%= tournamentList[count].Prizepool %> CAD</td>
+                            <% } %>
+                            </tr>
+                          <% } %> 
+                        </table>
+                      </div>
 
-<% include ../partials/footer.ejs %>
+
+                      <div class="col-md-offset-1 col-md-10 text-center">
+                        <ul class="pagination pagination-lg pager" id="myPager"></ul>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+              <!-- End Col -->
+          </div>
+          <!-- End Row -->
+      </div>
+      <!-- End Col -->
+  </div>
+  <!-- End Row -->
+
+  <% include ../partials/footer.ejs %>
 
 <% } else { %>
   <script> document.location.href = '/login' </script>
