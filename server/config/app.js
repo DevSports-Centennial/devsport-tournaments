@@ -37,10 +37,6 @@ let DB = require('./db');
 const dotenv = require("dotenv")
 dotenv.config()
 
-
-
-
-
 //point mongoose to the DB URI
 mongoose.connect(process.env.URI || DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -59,7 +55,6 @@ let index = require('../routes/index'); // top level routes
 // **************************
 // Add tournament route
 let tournament = require('../routes/tournament');
-let usersRouter = require('../routes/users');
 let app = express();
 
 // view engine setup
@@ -120,7 +115,6 @@ passport.use(strategy);
 
 // route redirects
 app.use('/', index);
-app.use('/users', usersRouter);
 // **************************
 // Add tournament route
 app.use('/tournament', tournament);
