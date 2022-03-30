@@ -1,3 +1,14 @@
+/**
+ * index.js
+ *
+ * Due Date: Mar 29, 2022
+ *
+ * @link   index.js
+ * @file   This is a controller file to include home page, registration page and login page.
+ * @author  DevSports 
+ * @since  1.0.0
+ */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');

@@ -3,12 +3,10 @@
  * Due Date: March 18, 2022
  *
  * @link   tournament.js
- * @file   This file creating mongoose model.
+ * @file   This file creating mongoose model "Tournament".
  * @author DevSports
  * @since  1.0.0
  */
-
-
 
 let mongoose = require('mongoose');
 

@@ -1,3 +1,13 @@
+/**
+ * user.js
+ * Due Date: March 29, 2022
+ *
+ * @link   user.js
+ * @file   This file creating mongoose model "User".
+ * @author DevSports
+ * @since  1.0.0
+ */
+
 // require modules for the User Model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
@@ -12,15 +22,6 @@ let User = mongoose.Schema
             trim: true,
             required: 'username is required'
         },
-        /*
-        password: 
-        {
-            type: String,
-            default: '';
-            trim: true,
-            required: 'password is required'
-        }
-        */
        email: 
        {
             type: String,
@@ -52,9 +53,6 @@ let User = mongoose.Schema
 );
 
 // configure options for User Model
-
 let options = ({ missingPasswordError: 'Wrong / Missing Password'});
-
 User.plugin(passportLocalMongoose, options);
-
 module.exports.User = mongoose.model('User', User);
