@@ -52,10 +52,11 @@ mongoDB.once('open', ()=> {
 
 // define routers
 let index = require('../routes/index'); // top level routes
-// **************************
-// Add tournament route
 let tournament = require('../routes/tournament');
+let api = require('../routes/api');
+
 let app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -115,9 +116,10 @@ passport.use(strategy);
 
 // route redirects
 app.use('/', index);
-// **************************
 // Add tournament route
 app.use('/tournament', tournament);
+// Add api route
+app.use('/api/v1', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
