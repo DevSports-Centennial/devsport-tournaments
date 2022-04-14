@@ -22,6 +22,7 @@ router.use(function (req, res, next) {
     next();
 });
 
+
 /* GET tournaments */
 router.get('/tournaments', apiController.getTournaments);
 
