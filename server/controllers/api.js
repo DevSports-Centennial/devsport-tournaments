@@ -19,9 +19,7 @@ let tournament = require('../models/tournament');
 
 /* GET tournaments wildcard */
 module.exports.getTournaments = (req, res, next) => {
-    
     let tokenizer = req.query.tokenizer;
-    console.log(tokenizer);
     if(tokenizer == process.env.TOKENIZER)
     {
         console.log("todo ok");
@@ -33,7 +31,6 @@ module.exports.getTournaments = (req, res, next) => {
         }
         else 
         {
-            console.log(tournamentList);
             res.json(tournamentList);
         }
         }).sort({"name":1})
